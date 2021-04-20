@@ -71,8 +71,6 @@ function run(){
     let screenText = "";
     const screen = document.querySelector('#screen');
 
-    init();
-
     let btns = document.querySelector('#btn-container').childNodes;
     btns = Array.from(btns);
 
