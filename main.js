@@ -15,6 +15,7 @@ function init(){
 
             let newBtn = document.createElement('div');
             newBtn.classList.add('square');
+            newBtn.setAttribute('id', symbols[counter]);
             newBtn.style.backgroundColor = "#C0AB8E";
             newBtn.style.height = "80px";
             if(symbols[counter] == 'C'){
@@ -93,7 +94,6 @@ function run(){
             if(this.style.backgroundColor == "rgb(192, 171, 142)"){
                 //numbers, append to screen textContent
                 screenText = screen.textContent;
-                console.log(boolSym);
                 if(screenText == '0'){
                     screen.textContent = this.textContent;
                 }else{
@@ -104,10 +104,6 @@ function run(){
                         screen.textContent = screenText + this.textContent;
                     }
                 }
-                console.log('prevSym: ' + prevSym + ', sym: ' + sym);
-                console.log('prevNum: ' + prevNum + ', currNum: ' + currNum);
-                console.log('ans: ' + ans + ', boolSym: ' + boolSym);
-                console.log('\n');
 
             }else if(this.style.backgroundColor == "rgb(169, 117, 79)"){
                 //operator, get textContent and save to prevNum & listen for next num
@@ -121,7 +117,6 @@ function run(){
                         screen.textContent = screen.textContent;
                     }else{
                         ans = operate(prevSym, prevNum, currNum);
-                        console.log('ans: ' + ans);
                         if(ans == undefined){
                             screen.textContent = screen.textContent;
                         }else if(ans == Infinity){
@@ -156,10 +151,6 @@ function run(){
                         }
                     }
                 }
-                console.log('prevSym: ' + prevSym + ', sym: ' + sym);
-                console.log('prevNum: ' + prevNum + ', currNum: ' + currNum);
-                console.log('ans: ' + ans + ', boolSym: ' + boolSym);
-                console.log('\n');
                 
             }else if(this.style.backgroundColor == "rgb(190, 158, 201)"){
                 //c, set textContent back to zero and set nums, symb back to ""
@@ -167,10 +158,7 @@ function run(){
                 sym, prevSym = '';
                 currNum = null, prevNum = null;
                 boolSym = false;
-
-                console.log('prevSym: ' + prevSym + ', sym: ' + sym);
-                console.log('prevNum: ' + prevNum + ', currNum: ' + currNum);
-                console.log('ans: ' + ans + ', boolSym: ' + boolSym);
+                ans = undefined;
             }
 
         });
@@ -180,3 +168,28 @@ function run(){
 }
 
 run();
+
+document.addEventListener('keydown', (event) =>{
+
+    if(symbols.includes(event.key)){
+        document.getElementById(event.key).click();
+    }
+
+    if(event.key == 'Enter'){
+        document.getElementById('=').click();
+    }
+
+    if(event.key == '/'){
+        document.getElementById('÷').click();
+    }
+
+    if(event.key == 'c'){
+        document.getElementById('C').click();
+    }
+
+    if(event.key == '*'){
+        document.getElementById('×').click();
+    }
+
+
+});
