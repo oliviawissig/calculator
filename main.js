@@ -184,11 +184,16 @@ function run(){
                 }
                 
             }else if(this.style.backgroundColor == "rgb(190, 158, 201)"){
-                //switched from clear button to period. 
-                if(screen.textContent == '0'){
-                    screen.textContent = '0.';
+                //switched clr button to period. 
+                //if textContent contains '.' then don't do anything
+                if(screen.textContent.includes('.')){
+                    screen.textContent = screen.textContent;
                 }else{
-                    screen.textContent = screen.textContent + '.';
+                    if(screen.textContent == '0'){
+                        screen.textContent = '0.';
+                    }else{
+                        screen.textContent = screen.textContent + '.';
+                    }
                 }
                 
             }else if(this.style.backgroundColor == "rgb(68, 56, 80)"){
