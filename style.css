@@ -99,16 +99,6 @@ h3{
 }
 
 @media only screen and (max-width: 600px) {
-    /*#calc{*/
-    /*    margin-left:auto;*/
-    /*    margin-right:auto;*/
-    /*    border-radius: 15px;*/
-    /*    padding:20px;*/
-    /*    width:280px;*/
-    /*    background-color:#2E2F2F;*/
-    /*    font-family: "42S";*/
-    /*}*/
-
     body{
         background-color:#2E2F2F;
         color:white;
