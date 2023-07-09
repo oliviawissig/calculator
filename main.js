@@ -12,7 +12,7 @@ function init(){
     let clearBtn = document.createElement('div');
     clearBtn.classList.add('top-square');
     clearBtn.setAttribute('id', 'C');
-    clearBtn.style.backgroundColor = "#443850";
+    clearBtn.style.backgroundColor = "#72705B";
 
     clearBtn.appendChild(clearBtnText);
     topContainer.append(clearBtn);
@@ -24,7 +24,7 @@ function init(){
     let delBtn = document.createElement('div');
     delBtn.classList.add('top-square');
     delBtn.setAttribute('id', 'Del');
-    delBtn.style.backgroundColor = "#443850";
+    delBtn.style.backgroundColor = "#72705B";
 
     delBtn.appendChild(delBtnText);
     topContainer.append(delBtn);
@@ -40,7 +40,7 @@ function init(){
             newBtn.setAttribute('id', symbols[counter]);
             newBtn.style.backgroundColor = "#C0AB8E";
             if(symbols[counter] == '.'){
-                newBtn.style.backgroundColor = "#BE9EC9";
+                newBtn.style.backgroundColor = "#725752";
             }else if(symbols[counter] == '÷' || symbols[counter] == '×' || symbols[counter] == '-' || symbols[counter] == '+' || symbols[counter] == '='){
                 newBtn.style.backgroundColor = "#A9754F";
             }
